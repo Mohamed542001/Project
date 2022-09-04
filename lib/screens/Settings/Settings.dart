@@ -16,16 +16,18 @@ class _SettingsState extends State<Settings> {
           title: 'Settings',
           back: false,
         ),
-        body: Container(
-          color: AppColors.white,
-          width: double.infinity,
-          padding: const EdgeInsets.all(15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              BuildSettingsText(),
-              BuildSettingsForm(),
-            ],
+        body: SingleChildScrollView(
+          child: Container(
+            color: AppColors.white,
+            width: double.infinity,
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                BuildSettingsText(),
+                BuildSettingsForm(),
+              ],
+            ),
           ),
         )
     );

@@ -7,12 +7,12 @@ class UsersModel {
       required this.phone,
       required this.email});
 
-  final String? id;
-  final String? name;
-  final String? age;
-  final String? address;
-  final String? phone;
-  final String? email;
+   String? id;
+   String? name;
+   String? age;
+   String? address;
+   String? phone;
+   String? email;
 
   factory UsersModel.fromJson(Map<String,dynamic> json) =>
   UsersModel(

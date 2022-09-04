@@ -8,27 +8,30 @@ class BuildSettingsForm extends StatefulWidget {
 }
 
 class _BuildSettingsFormState extends State<BuildSettingsForm> {
-
-  SettingsData settingsData = SettingsData();
   UsersModel? usersModel;
+  bool isLoading = true;
 
-  getUser() async{
-    usersModel = await settingsData.readUsers();
+  Future<void> readUsers() async {
+    usersModel = await ApiProvider().readUsers();
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
   void initState() {
-    getUser();
+    readUsers();
     // TODO: implement initState
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
-    return
-     Column(
+    return isLoading
+        ? CircularProgressIndicator()
+        : Column(
       children: [
-        Text('${usersModel?.name}'),
-
+        Text('${usersModel!.name}'),
         CustomInputFormField(
           enabled: false,
           labeltxt: usersModel?.name,
