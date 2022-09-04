@@ -9,21 +9,16 @@ class BuildSettingsForm extends StatefulWidget {
 
 class _BuildSettingsFormState extends State<BuildSettingsForm> {
 
+  SettingsData settingsData = SettingsData();
   UsersModel? usersModel;
-  Future<void> readUsers() async{
-    await FirebaseFirestore.instance
-        .collection('users')
-        .doc('Z4ll2a4asYN1G7NUYoSd')
-        .get().
-    then((value) {
-        usersModel = UsersModel.fromJson(value.data()!);
-    });
-    print(usersModel?.phone);
+
+  getUser() async{
+    usersModel = await settingsData.readUsers();
   }
 
   @override
   void initState() {
-    readUsers();
+    getUser();
     // TODO: implement initState
     super.initState();
   }
@@ -32,7 +27,7 @@ class _BuildSettingsFormState extends State<BuildSettingsForm> {
     return
      Column(
       children: [
-        Text('${usersModel!.name}'),
+        Text('${usersModel?.name}'),
 
         CustomInputFormField(
           enabled: false,
