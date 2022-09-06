@@ -31,7 +31,6 @@ class _BuildSettingsFormState extends State<BuildSettingsForm> {
         ? CircularProgressIndicator()
         : Column(
       children: [
-        Text('${usersModel!.name}'),
         CustomInputFormField(
           enabled: false,
           labeltxt: usersModel?.name,

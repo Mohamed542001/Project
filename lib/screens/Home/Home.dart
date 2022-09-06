@@ -27,11 +27,17 @@ class _HomeState extends State<Home> {
         ),
       ),
       drawer: const BuildDrawer(),
-      body: Center(
-        child: CustomText(
-          title: 'Home123',
+      body: Container(
+        margin: EdgeInsets.all(10),
+        child: SingleChildScrollView(
+          child: Column(
+            children: const [
+              BuildHomePageView(),
+              BuildHomeBooks()
+            ],
+          ),
         ),
-      )
+      ),
     );
 
 

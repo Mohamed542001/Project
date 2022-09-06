@@ -16,11 +16,12 @@ class _SettingsState extends State<Settings> {
           title: 'Settings',
           back: false,
         ),
-        body: SingleChildScrollView(
-          child: Container(
-            color: AppColors.white,
-            width: double.infinity,
-            padding: const EdgeInsets.all(15),
+        body: Container(
+          color: AppColors.white,
+          width: double.infinity,
+          height: double.infinity,
+          padding: const EdgeInsets.all(15),
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
