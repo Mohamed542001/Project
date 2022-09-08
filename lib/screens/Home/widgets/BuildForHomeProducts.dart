@@ -1,33 +1,31 @@
 part of 'HomeWidgetsImports.dart';
 
-class BuildHomeBooks extends StatefulWidget {
-  const BuildHomeBooks({Key? key}) : super(key: key);
+class BuildForHomeProducts extends StatefulWidget {
+  const BuildForHomeProducts({Key? key}) : super(key: key);
 
   @override
-  State<BuildHomeBooks> createState() => _BuildHomeBooksState();
+  State<BuildForHomeProducts> createState() => _BuildForHomeProductsState();
 }
 
-class _BuildHomeBooksState extends State<BuildHomeBooks> {
+class _BuildForHomeProductsState extends State<BuildForHomeProducts> {
 
-
-  List<BooksModels> books = [];
+  List<HomeProductModel> homeProduct = [];
   bool isLoading = true;
 
-  Future<BooksModels?> get() async{
+  Future<HomeProductModel?> get() async{
     await FirebaseFirestore.instance
-        .collection('books')
+        .collection('homeProduct')
         .get().
     then((value) {
       value.docs.forEach((element) {
-        books.add(BooksModels.fromJson(element.data()));
+        homeProduct.add(HomeProductModel.fromJson(element.data()));
       });
     });
     setState(() {
       isLoading = false;
     });
-    print(books[0].name);
+    print(homeProduct[0].name);
   }
-
 
 
   @override
@@ -40,15 +38,14 @@ class _BuildHomeBooksState extends State<BuildHomeBooks> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 10),
       child: isLoading
           ? CircularProgressIndicator()
-      :Column(
+          :Column(
         children: [
           Row(
             children: [
               CustomText(
-                title: 'Best Books',
+                title: 'Best Home Product',
                 size: 20,
                 fontWeight: FontWeight.bold,
               ),
@@ -70,7 +67,7 @@ class _BuildHomeBooksState extends State<BuildHomeBooks> {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
-                childAspectRatio: 1 / 1.7,
+                childAspectRatio: 1 / 1.5,
               ),
               physics: const NeverScrollableScrollPhysics(),
               itemCount: 2,
@@ -85,19 +82,13 @@ class _BuildHomeBooksState extends State<BuildHomeBooks> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image.network('${books[index].image}',height: 80,width: double.infinity,),
+                        Image.network('${homeProduct[index].image}',height: 80,width: double.infinity,),
                         const SizedBox(
                           height: 10,
                         ),
                         CustomText(
-                          title: books[index].name,
+                          title: homeProduct[index].name,
                           fontWeight: FontWeight.bold,
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        CustomText(
-                          title: books[index].author,
                         ),
                         const SizedBox(
                           height: 5,
@@ -121,14 +112,14 @@ class _BuildHomeBooksState extends State<BuildHomeBooks> {
                           height: 5,
                         ),
                         CustomText(
-                          title: books[index].newPrice,
+                          title: homeProduct[index].newPrice,
                           fontWeight: FontWeight.bold,
                         ),
                         const SizedBox(
                           height: 5,
                         ),
                         CustomText(
-                          title: books[index].oldPrice,
+                          title: homeProduct[index].oldPrice,
                           decoration: TextDecoration.lineThrough,
 
                         ),

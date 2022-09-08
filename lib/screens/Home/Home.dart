@@ -28,12 +28,17 @@ class _HomeState extends State<Home> {
       ),
       drawer: const BuildDrawer(),
       body: Container(
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         child: SingleChildScrollView(
           child: Column(
             children: const [
               BuildHomePageView(),
-              BuildHomeBooks()
+              BuildHomeBooks(),
+              BuildHomeChildrenProducts(),
+              BuildForHomeProducts(),
+              BuildHomeMeals(),
+              BuildHomeSports(),
+              BuildHomeElectronics(),
             ],
           ),
         ),

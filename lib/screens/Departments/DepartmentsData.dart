@@ -2,6 +2,15 @@ part of 'DepartmentsImports.dart';
 
 class DepartmentsData{
 
+  List<Widget> navigatePages = [
+    const Books(),
+    const Electronics(),
+    const HomeProduct(),
+    const ChildrenProducts(),
+    const Sports(),
+    const Meals()
+  ];
+
   List<DepartmentsModel> departmentsModel = [
     DepartmentsModel(
         image: 'assets/images/book.png',

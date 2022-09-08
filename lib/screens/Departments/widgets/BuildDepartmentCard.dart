@@ -18,7 +18,10 @@ class BuildDepartmentCard extends StatelessWidget {
       itemCount: departmentsData.departmentsModel.length,
         itemBuilder: (context,i)=>InkWell(
           onTap: (){
-            print(i);
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_)=>departmentsData.navigatePages[i])
+            );
           },
 
           child: Card(
