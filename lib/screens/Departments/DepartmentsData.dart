@@ -8,7 +8,7 @@ class DepartmentsData{
     const HomeProduct(),
     const ChildrenProducts(),
     const Sports(),
-    const Meals()
+    const Meals(),
   ];
 
   List<DepartmentsModel> departmentsModel = [

@@ -49,7 +49,7 @@ class DefaultButton extends StatelessWidget {
 
 
           shape: RoundedRectangleBorder(
-            borderRadius: borderRadius??BorderRadius.circular(50),
+            borderRadius: borderRadius??BorderRadius.circular(15),
             side: BorderSide(color: borderColor??border,width: 2),
           ),
           elevation: elev??0,

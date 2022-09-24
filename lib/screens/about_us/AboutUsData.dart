@@ -16,7 +16,7 @@ class AboutUsData {
     ),
     TeamModel(
       id: 3,
-        name: 'Kholoud Waleed Kholoud Waleed',
+        name: 'Kholoud Waleed Ebrahim Elsherbeny',
         phone: '01090499806',
         email: 'Kholoud@gmail.com'
     ),

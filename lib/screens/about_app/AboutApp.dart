@@ -10,8 +10,6 @@ class AboutApp extends StatefulWidget {
 
 class _AboutAppState extends State<AboutApp> {
 
-  AboutUsData aboutUsData = AboutUsData();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +22,7 @@ class _AboutAppState extends State<AboutApp> {
         child: Container(
           padding: const EdgeInsets.all(10),
           child: Column(
-            children: [
+            children: const [
               BuildAboutAppText()
             ],
           ),

@@ -14,7 +14,7 @@ class ApiProvider{
   Future<UsersModel?> readUsers() async{
     await FirebaseFirestore.instance
         .collection('users')
-        .doc('Z4ll2a4asYN1G7NUYoSd')
+        .doc('Wo9p9yjBokg8QSbnSAQj')
         .get().
     then((value) {
       usersModel = UsersModel.fromJson(value.data()!);
@@ -48,18 +48,6 @@ class ApiProvider{
     print(booksModels?.name);
     return booksModels;
   }
-
-  // Future<BooksModels?> getBooks() async{
-  //   await FirebaseFirestore.instance
-  //       .collection('books')
-  //       .get()
-  //       .then((value) {
-  //         value.docs.forEach((element) {
-  //           books.add(BooksModels.fromJson(element.data()));
-  //         });
-  //   });
-  //   print(books[1].name);
-  // }
 
 
   void getBooks(){

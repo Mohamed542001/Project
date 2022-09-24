@@ -28,7 +28,7 @@ class _BuildSettingsFormState extends State<BuildSettingsForm> {
   @override
   Widget build(BuildContext context) {
     return isLoading
-        ? CircularProgressIndicator()
+        ? const Center(child: CircularProgressIndicator())
         : Column(
       children: [
         CustomInputFormField(

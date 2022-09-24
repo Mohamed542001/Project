@@ -6,4 +6,3 @@ import 'package:project/screens/widgets/AppColors.dart';
 import 'package:project/screens/widgets/DefaultAppBar.dart';
 
 part 'AboutApp.dart';
-part 'AboutAppData.dart';

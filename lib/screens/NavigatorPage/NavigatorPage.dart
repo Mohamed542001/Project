@@ -43,7 +43,6 @@ class _NavigatorPageState extends State<NavigatorPage> {
             onTap: (index){
               setState(() {
                 navigatorPageData.selectedIndex=index;
-                print('$index');
               });
             },
             items: const[
